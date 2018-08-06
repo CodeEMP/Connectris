@@ -3,7 +3,6 @@ import Board from './board.js';
 import PlayerStatus from './playerstatus.js';
 import * as gameActions from '../actions/gameActions.js';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 class App extends Component {
 

@@ -13,7 +13,7 @@ class PlayerStatus extends Component {
   renderColorShape() {
     if (this.props.shape==='Line') {
       return (
-        <div>
+        <div className='shapecontainerbig'>
           <p className='shapecontainer'>
             [][][][]
           </p>
@@ -22,7 +22,7 @@ class PlayerStatus extends Component {
     }
     else if (this.props.shape==='Square') {
       return (
-        <div>
+        <div className='shapecontainerbig'>
           <p className='shapecontainer'>
             [][]
           </p>
@@ -34,15 +34,42 @@ class PlayerStatus extends Component {
     }
     else if (this.props.shape==='Tee') {
       return (
-        <div>
+        <div className='shapecontainerbig'>
           <p className='shapecontainer'>
+            []
+          </p>
+          <p className='shapecontainer'>
+            [][][]
+          </p>
+        </div>
+      )
+    }
+    else if (this.props.shape==='Ell') {
+      return (
+        <div className='shapecontainerbig'>
+          <p className='shapecontainer'>
+            []
+          </p>
+          <p className='shapecontainer'>
+            []
+          </p>
+          <p className='shapecontainer elloffset'>
+            [][]
+          </p>
+        </div>
+      )
+    }
+    else if (this.props.shape==='Lee') {
+      return (
+        <div className='shapecontainerbig'>
+          <p className='shapecontainer elloffset'>
+            []
+          </p>
+          <p className='shapecontainer elloffset'>
             []
           </p>
           <p className='shapecontainer'>
             [][]
-          </p>
-          <p className='shapecontainer'>
-            []
           </p>
         </div>
       )

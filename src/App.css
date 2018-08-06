@@ -71,6 +71,15 @@
   width: 100%;
 }
 
+.elloffset {
+  padding-left: 10px;
+}
+
+.shapecontainerbig {
+  width: 100%;
+  justify-content: flex-start;
+}
+
 .game {
   display: flex;
   flex-direction: row;
