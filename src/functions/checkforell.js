@@ -97,7 +97,7 @@ export default function checkForEll(state,x,y,playerColor,alt) {
     state = cycleColors(state,x+1,y);
     state = addPoint(state);
   }
-  else if (x-1>=0&&x-2>=0&&y+1<=8&&(state.squares[x-y][y].color===playerColor||state.squares[x-y][y].color===alt||state.squares[x-y][y].color==='Purple')&&
+  else if (x-1>=0&&x-2>=0&&y+1<=8&&(state.squares[x-1][y].color===playerColor||state.squares[x-1][y].color===alt||state.squares[x-1][y].color==='Purple')&&
   (state.squares[x-2][y].color===playerColor||state.squares[x-2][y].color===alt||state.squares[x-2][y].color==='Purple')&&
   (state.squares[x-2][y+1].color===playerColor||state.squares[x-2][y+1].color===alt||state.squares[x-2][y+1].color==='Purple')) {
     state = cycleColors(state,x,y);

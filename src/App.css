@@ -72,7 +72,10 @@
 }
 
 .elloffset {
-  padding-left: 10px;
+  padding-left: 12px;
+}
+.essoffset {
+  padding-left: 23px;
 }
 
 .shapecontainerbig {

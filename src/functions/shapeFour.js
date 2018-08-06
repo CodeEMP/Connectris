@@ -1,5 +1,5 @@
 export default function shapeFour() {
-  var num = Math.floor(Math.random() * (4) ) + 1;
+  var num = Math.floor(Math.random() * (7) ) + 1;
   if (num===1) {
     return 'Line';
   }
@@ -11,5 +11,14 @@ export default function shapeFour() {
   }
   else if (num===4) {
     return "Ell";
+  }
+  else if (num===5) {
+    return "Lee";
+  }
+  else if (num===6) {
+    return "Ess";
+  }
+  else if (num===7) {
+    return "Zee";
   }
 }

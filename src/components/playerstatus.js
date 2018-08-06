@@ -74,6 +74,30 @@ class PlayerStatus extends Component {
         </div>
       )
     }
+    else if (this.props.shape==='Ess') {
+      return (
+        <div className='shapecontainerbig'>
+          <p className='shapecontainer essoffset'>
+            [][]
+          </p>
+          <p className='shapecontainer'>
+            [][]
+          </p>
+        </div>
+      )
+    }
+    else if (this.props.shape==='Zee') {
+      return (
+        <div className='shapecontainerbig'>
+          <p className='shapecontainer'>
+            [][]
+          </p>
+          <p className='shapecontainer essoffset'>
+            [][]
+          </p>
+        </div>
+      )
+    }
   }
 
   render() {
