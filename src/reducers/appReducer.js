@@ -1,11 +1,16 @@
-import initialAppState from './initialAppState.js';
+import initialGameState from './initialGameState.js';
 import * as types from '../actions/actionTypes';
 
 export default function app (state, action) {
   if (state === undefined) {
-    return initialAppState;
+    return initialGameState;
   }
-  return state;
+  switch(action.type) {
+
+
+    default :
+      return state;
+  }
 
 
 }

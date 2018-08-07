@@ -3,6 +3,7 @@ import Board from './board.js';
 import PlayerStatus from './playerstatus.js';
 import * as gameActions from '../actions/gameActions.js';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 
 class App extends Component {
 
@@ -11,7 +12,11 @@ class App extends Component {
   }
 
   clickHandler(x, y) {
-    this.props.actions.clicksquare(x,y)
+    this.props.actions.clicksquare(x,y);
+  }
+
+  resetHandler() {
+    this.props.actions.resetButton();
   }
 
   componentDidMount() {
@@ -21,9 +26,6 @@ class App extends Component {
   render() {
     return (
         <div>
-          <header className="header">
-            <h1>Connectris Alpha</h1>
-          </header>
           <div className="content">
             <div className="redPlayer">
               <PlayerStatus player='Red'
@@ -44,6 +46,10 @@ class App extends Component {
                 shape={this.props.blueShape} />
             </div>
           </div>
+          <div style={{marginTop:50}}>
+            <Link to="/"><button>HOME</button></Link>
+            <button style={{marginTop:30}} onClick={()=>this.resetHandler()}>RESET</button>
+          </div>
         </div>
     )
   }
@@ -61,6 +67,9 @@ function mapDispatchToProps (dispatch) {
       },
       clicksquare: function(x,y) {
         dispatch(gameActions.squareClick(x,y))
+      },
+      resetButton: function () {
+        dispatch(gameActions.resetGame())
       }
     }
   }

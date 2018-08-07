@@ -25,7 +25,7 @@ export default function checkForZee(state,x,y,playerColor,alt) {
     return state;
   }
 
-  //[][]  needs to be finished
+  //[][]
   //  [][]
   check = coordCheck(state,x+1,y,x+1,y+1,x+2,y+1,playerColor,alt);
   if (check===true) {

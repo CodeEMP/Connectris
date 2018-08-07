@@ -2,10 +2,12 @@ import initialGameState from './initialGameState.js';
 import * as types from '../actions/actionTypes.js';
 import dropPiece from '../functions/dropPiece.js';
 import checkForScore from '../functions/checkforscore.js';
+import shapeFour from '../functions/shapeFour.js';
 
 export default function game (state, action) {
   if (state === undefined) {
-    return initialGameState;
+    var new_state = initialGameState;
+    return new_state;
   }
   switch (action.type) {
     case types.HOVER_CHANGE:
@@ -35,6 +37,41 @@ export default function game (state, action) {
         new_state.currentPlayer='Red';
       }
       return new_state;
+
+      case types.GAME_SETUP:
+        var new_state = {...state};
+        var red = shapeFour();
+        var blue = shapeFour();
+        new_state.redShape=red;
+        new_state.blueShape=blue;
+        var num = Math.floor(Math.random() * (2) ) + 1;
+        if (num===1) {
+          new_state.currentPlayer="Red";
+        }
+        else {
+          new_state.currentPlayer="Blue";
+        }
+        return new_state;
+
+      case types.RESET_GAME:
+        var new_state = {...state};
+        for (var i = 0; i < new_state.squares.length; i++) {
+          for (var j = 0; j < new_state.squares[i].length; j++) {
+            new_state.squares[i][j].color='lightgray';
+          }
+        }
+        var red = shapeFour();
+        var blue = shapeFour();
+        new_state.redShape=red;
+        new_state.blueShape=blue;
+        var num = Math.floor(Math.random() * (2) ) + 1;
+        if (num===1) {
+          new_state.currentPlayer="Red";
+        }
+        else {
+          new_state.currentPlayer="Blue";
+        }
+        return new_state;
 
     default:
       return state;
