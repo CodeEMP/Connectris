@@ -6,105 +6,105 @@ export default function checkForEll(state,x,y,playerColor,alt) {
   //[]
   //[]
   //[][]
-  if (x+1<=8&&y+1<=8&&y+2<=8&&(state.squares[x][y+1].color===playerColor||state.squares[x][y+1].color===alt||state.squares[x][y+1].color==='Purple')&&
-  (state.squares[x][y+2].color===playerColor||state.squares[x][y+2].color===alt||state.squares[x][y+2].color==='Purple')&&
-  (state.squares[x+1][y+2].color===playerColor||state.squares[x+1][y+2].color===alt||state.squares[x+1][y+2].color==='Purple')) {
+  var check=coordCheck(state,x,y+1,x,y+2,x+1,y+2,playerColor,alt);
+  if (check===true) {
     state = cycleColors(state,x,y);
     state = cycleColors(state,x,y+1);
     state = cycleColors(state,x,y+2);
     state = cycleColors(state,x+1,y+2);
     state = addPoint(state);
+    return state;
   }
-  else if (x-1>=0&&y-1>=0&&y-2>=0&&(state.squares[x-1][y-2].color===playerColor||state.squares[x-1][y-2].color===alt||state.squares[x-1][y-2].color==='Purple')&&
-  (state.squares[x-1][y-1].color===playerColor||state.squares[x-1][y-1].color===alt||state.squares[x-1][y-1].color==='Purple')&&
-  (state.squares[x-1][y].color===playerColor||state.squares[x-1][y].color===alt||state.squares[x-1][y].color==='Purple')) {
+  check=coordCheck(state,x-1,y-2,x-1,y-1,x-1,y,playerColor,alt);
+  if (check===true) {
     state = cycleColors(state,x,y);
     state = cycleColors(state,x-1,y-2);
     state = cycleColors(state,x-1,y-1);
     state = cycleColors(state,x-1,y);
     state = addPoint(state);
+    return state;
   }
 
   //    []
   //[][][]
-  else if (x+1<=8&&x+2<=8&&y-1>=0&&(state.squares[x+1][y].color===playerColor||state.squares[x+1][y].color===alt||state.squares[x+1][y].color==='Purple')&&
-  (state.squares[x+2][y].color===playerColor||state.squares[x+2][y].color===alt||state.squares[x+2][y].color==='Purple')&&
-  (state.squares[x+2][y-1].color===playerColor||state.squares[x+2][y-1].color===alt||state.squares[x+2][y-1].color==='Purple')) {
+  check=coordCheck(state,x+1,y,x+2,y,x+2,y-1,playerColor,alt);
+  if (check===true) {
     state = cycleColors(state,x,y);
     state = cycleColors(state,x+1,y);
     state = cycleColors(state,x+2,y);
     state = cycleColors(state,x+2,y-1);
     state = addPoint(state);
+    return state;
   }
-  else if (x-1>=0&&x+1<=8&&y-1>=0&&(state.squares[x-1][y].color===playerColor||state.squares[x-1][y].color===alt||state.squares[x-1][y].color==='Purple')&&
-  (state.squares[x+1][y].color===playerColor||state.squares[x+1][y].color===alt||state.squares[x+1][y].color==='Purple')&&
-  (state.squares[x+1][y-1].color===playerColor||state.squares[x+1][y-1].color===alt||state.squares[x+1][y-1].color==='purple')) {
+  check=coordCheck(state,x-1,y,x+1,y,x+1,y-1,playerColor,alt);
+  if (check===true) {
     state = cycleColors(state,x,y);
     state = cycleColors(state,x-1,y);
     state = cycleColors(state,x+1,y);
     state = cycleColors(state,x+1,y-1);
     state = addPoint(state);
+    return state;
   }
-  else if (x-2>=0&&y+1<=8&&x-1>=0&&(state.squares[x-2][y+1].color===playerColor||state.squares[x-2][y+1].color===alt||state.squares[x-2][y+1].color==='Purple')&&
-  (state.squares[x-1][y+1].color===playerColor||state.squares[x-1][y+1].color===alt||state.squares[x-1][y+1].color==='Purple')&&
-  (state.squares[x][y+1].color===playerColor||state.squares[x][y+1].color===alt||state.squares[x][y+1].color==='Purple')) {
+  check=coordCheck(state,x-2,y+1,x-1,y+1,x,y+1,playerColor,alt);
+  if (check===true) {
     state = cycleColors(state,x,y);
     state = cycleColors(state,x-2,y+1);
     state = cycleColors(state,x-1,y+1);
     state = cycleColors(state,x,y+1);
     state = addPoint(state);
+    return state;
   }
 
   //[][]
   //  []
   //  []
-  else if (x+1<=8&&y+1<=9&&y+2<=8&&(state.squares[x+1][y].color===playerColor||state.squares[x+1][y].color===alt||state.squares[x+1][y].color==='Purple')&&
-  (state.squares[x+1][y+1].color===playerColor||state.squares[x+1][y+1].color===alt||state.squares[x+1][y+1].color==='Purple')&&
-  (state.squares[x+1][y+2].color===playerColor||state.squares[x+1][y+2].color===alt||state.squares[x+1][y+2].color==='Purple')) {
+  check=coordCheck(state,x+1,y,x+1,y+1,x+1,y+2,playerColor,alt);
+  if (check===true) {
     state = cycleColors(state,x,y);
     state = cycleColors(state,x+1,y);
     state = cycleColors(state,x+1,y+1);
     state = cycleColors(state,x+1,y+2);
     state = addPoint(state);
+    return state;
   }
-  else if (x-1>=0&&y+1<=8&&y+2<=8&&(state.squares[x-1][y].color===playerColor||state.squares[x-1][y].color===alt||state.squares[x-1][y].color==='Purple')&&
-  (state.squares[x][y+1].color===playerColor||state.squares[x][y+1].color===alt||state.squares[x][y+1].color==='Purple')&&
-  (state.squares[x][y+2].color===playerColor||state.squares[x][y+2].color===alt||state.squares[x][y+2].color==='Purple')) {
+  check=coordCheck(state,x-1,y,x,y+1,x,y+2,playerColor,alt);
+  if (check===true) {
     state = cycleColors(state,x,y);
     state = cycleColors(state,x-1,y);
     state = cycleColors(state,x,y+1);
     state = cycleColors(state,x,y+2);
     state = addPoint(state);
+    return state;
   }
 
   //[][][]
   //[]
-  else if (x+1<=8&&x+2<=8&&y+1<=8&&(state.squares[x][y+1].color===playerColor||state.squares[x][y+1].color===alt||state.squares[x][y+1].color==='Purple')&&
-  (state.squares[x+1][y].color===playerColor||state.squares[x+1][y].color===alt||state.squares[x+1][y].color==='Purple')&&
-  (state.squares[x+2][y].color===playerColor||state.squares[x+2][y].color===alt||state.squares[x+2][y].color==='Purple')) {
+  check=coordCheck(state,x,y+1,x+1,y,x+2,y,playerColor,alt);
+  if (check===true) {
     state = cycleColors(state,x,y);
     state = cycleColors(state,x,y+1);
     state = cycleColors(state,x+1,y);
     state = cycleColors(state,x+2,y);
     state = addPoint(state);
+    return state;
   }
-  else if (x-1>=0&&y+1<=8&&x+1<=8&&(state.squares[x-1][y].color===playerColor||state.squares[x-1][y].color===alt||state.squares[x-1][y].color==='Purple')&&
-  (state.squares[x-1][y+1].color===playerColor||state.squares[x-1][y+1].color===alt||state.squares[x-1][y+1].color==='Purple')&&
-  (state.squares[x+1][y].color===playerColor||state.squares[x+1][y].color===alt||state.squares[x+1][y].color==='Purple')) {
+  check=coordCheck(state,x-1,y,x-1,y+1,x+1,y,playerColor,alt);
+  if (check===true) {
     state = cycleColors(state,x,y);
     state = cycleColors(state,x-1,y);
     state = cycleColors(state,x-1,y+1);
     state = cycleColors(state,x+1,y);
     state = addPoint(state);
+    return state;
   }
-  else if (x-1>=0&&x-2>=0&&y+1<=8&&(state.squares[x-1][y].color===playerColor||state.squares[x-1][y].color===alt||state.squares[x-1][y].color==='Purple')&&
-  (state.squares[x-2][y].color===playerColor||state.squares[x-2][y].color===alt||state.squares[x-2][y].color==='Purple')&&
-  (state.squares[x-2][y+1].color===playerColor||state.squares[x-2][y+1].color===alt||state.squares[x-2][y+1].color==='Purple')) {
+  check=coordCheck(state,x-1,y,x-2,y,x-2,y+1,playerColor,alt);
+  if (check===true) {
     state = cycleColors(state,x,y);
     state = cycleColors(state,x-1,y);
     state = cycleColors(state,x-2,y);
     state = cycleColors(state,x-2,y+1);
     state = addPoint(state);
+    return state;
   }
   return state;
 }

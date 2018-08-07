@@ -180,4 +180,10 @@ media (max-width: 480px) {
   .bluePlayer {
     width: 50%
   }
+  .elloffset {
+    padding-left: 8px;
+  }
+  .essoffset {
+    padding-left: 15px;
+  }
 }
