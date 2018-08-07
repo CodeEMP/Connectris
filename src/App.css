@@ -14,6 +14,22 @@
   color: white;
 }
 
+.homemenu {
+  padding: 10px;
+  width:100%;
+  position: fixed;
+  bottom: 0;
+  border: 5px solid black;
+  background-color: slateblue;
+  display: flex;
+  justify-content: space-around;
+}
+
+.homebutton {
+  border: 2px solid blue;
+  padding: 5px;
+}
+
 .App-intro {
   font-size: large;
 }
@@ -160,7 +176,7 @@
     padding-left: 8px;
   }
   .essoffset {
-    padding-left: 15px;
+    padding-left: 13px;
   }
 }
 
@@ -190,6 +206,6 @@ media only screen and (max-width: 480px) {
     padding-left: 8px;
   }
   .essoffset {
-    padding-left: 15px;
+    padding-left: 12px;
   }
 }
