@@ -27,16 +27,22 @@ export default function game (state, action) {
 
     case types.SQUARE_CLICK:
       var new_state = {...state};
-      var piece = dropPiece(new_state.squares, action.x);
-      new_state.squares[action.x][piece].color=new_state.currentPlayer;
-      new_state = checkForScore(new_state,action.x,piece);
-      if (new_state.currentPlayer==='Red') {
-        new_state.currentPlayer='Blue';
+      if (new_state.squares[action.x][0].color==='gray'){
+        var piece = dropPiece(new_state.squares, action.x);
+        new_state.squares[action.x][piece].color=new_state.currentPlayer;
+        new_state = checkForScore(new_state,action.x,piece);
+        if (new_state.currentPlayer==='Red') {
+          new_state.currentPlayer='Blue';
+        }
+        else {
+          new_state.currentPlayer='Red';
+        }
+        return new_state;
       }
       else {
-        new_state.currentPlayer='Red';
+        return new_state;
       }
-      return new_state;
+
 
       case types.GAME_SETUP:
         var new_state = {...state};
