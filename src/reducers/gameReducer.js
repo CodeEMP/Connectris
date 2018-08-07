@@ -70,6 +70,8 @@ export default function game (state, action) {
         var blue = shapeFour();
         new_state.redShape=red;
         new_state.blueShape=blue;
+        new_state.redPoints=0;
+        new_state.bluePoints=0;
         var num = Math.floor(Math.random() * (2) ) + 1;
         if (num===1) {
           new_state.currentPlayer="Red";
