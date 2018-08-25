@@ -7,6 +7,9 @@ class Friendslist extends Component {
       <div>
         <h1>FRIENDS LIST PH</h1>
         <Link to="/"><button>HOME</button></Link>
+        <div>
+
+        </div>
         <div className="homemenu">
           <Link to="/matches"><button className="homebutton">Games</button></Link>
           <Link to="/matchmaking"><button className="homebutton">Find match</button></Link>
