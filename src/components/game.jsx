@@ -5,7 +5,7 @@ import * as gameActions from '../actions/gameActions.js';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 
-class App extends Component {
+class Gametoconnect extends Component {
 
   hoverHandler(x) {
     this.props.actions.onhover(x);
@@ -77,6 +77,6 @@ function mapDispatchToProps (dispatch) {
 
 const Game = connect(
   mapStateToProps, mapDispatchToProps
-)(App)
+)(Gametoconnect)
 
 export default Game

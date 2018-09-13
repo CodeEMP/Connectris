@@ -37,13 +37,6 @@ class Login extends Component {
               this.setState({password:newValue})} />
           </label>
           <br />
-          <input
-            type="checkbox"
-            checked={this.state.remember}
-            onChange={(event, newValue) =>
-            this.setState({remember:newValue})} />
-            <label>Remember me</label>
-            <br />
           <input type="submit" value="Submit" />
         </form>
       </div>

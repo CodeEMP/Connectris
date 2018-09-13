@@ -1,9 +1,9 @@
-import initialAppState from './initialAppState.js';
+import initialAuthState from './initialAuthState.js';
 import * as types from '../actions/actionTypes';
 
-export default function app (state, action) {
+export default function auth (state, action) {
   if (state === undefined) {
-    return initialAppState;
+    return initialAuthState;
   }
   switch(action.type) {
 

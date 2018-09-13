@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 
 class home extends Component {
 
-  
+
 
   playHandler(){
     this.props.actions.clickPlay();

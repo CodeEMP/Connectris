@@ -1,4 +1,4 @@
-const initialState = {
+export default {
     token: null,
     userName: null,
     isAuthenticated: false,
@@ -7,4 +7,4 @@ const initialState = {
     isRegistering: false,
     isRegistered: false,
     registerStatusText: null,
-};
+}
